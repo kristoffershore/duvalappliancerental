@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Business Name</title>
+    <title>Utah Appliance Rental</title>
     <style>
         * {
             margin: 0;
@@ -14,6 +14,7 @@
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
+            color: #333;
         }
 
         /* Navigation */
@@ -32,7 +33,7 @@
         .logo {
             font-size: 1.5rem;
             font-weight: bold;
-            color: #0066cc;
+            color: #0ea5e9;
         }
 
         .nav-links {
@@ -49,11 +50,11 @@
         }
 
         .nav-links a:hover {
-            color: #0066cc;
+            color: #0ea5e9;
         }
 
         .cta-button {
-            background: #0066cc;
+            background: #0ea5e9;
             color: white;
             padding: 0.75rem 1.5rem;
             border-radius: 5px;
@@ -63,14 +64,17 @@
         }
 
         .cta-button:hover {
-            background: #0052a3;
+            background: #0284c7;
         }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23666" width="1200" height="600"/></svg>');
+            background-size: cover;
+            background-position: center;
             color: white;
-            padding: 6rem 5%;
+            padding: 8rem 5%;
             min-height: 500px;
             display: flex;
             align-items: center;
@@ -89,7 +93,6 @@
         .hero p {
             font-size: 1.25rem;
             margin-bottom: 2rem;
-            opacity: 0.95;
         }
 
         .button-group {
@@ -99,14 +102,13 @@
         }
 
         .btn-primary {
-            background: #ffc107;
+            background: #fbbf24;
             color: #333;
             padding: 1rem 2rem;
             border-radius: 5px;
             text-decoration: none;
             font-weight: 600;
             transition: transform 0.3s, box-shadow 0.3s;
-            display: inline-block;
         }
 
         .btn-primary:hover {
@@ -123,17 +125,15 @@
             text-decoration: none;
             font-weight: 600;
             transition: background 0.3s;
-            display: inline-block;
         }
 
         .btn-secondary:hover {
             background: rgba(255,255,255,0.1);
         }
 
-        /* Features Section */
-        .features {
+        /* Section Styles */
+        section {
             padding: 5rem 5%;
-            background: #f8f9fa;
         }
 
         .section-title {
@@ -150,6 +150,11 @@
             margin-bottom: 3rem;
         }
 
+        /* Features Section */
+        .features {
+            background: #f8fafc;
+        }
+
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -162,33 +167,463 @@
             background: white;
             padding: 2rem;
             border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
             text-align: center;
-            transition: transform 0.3s;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-5px);
         }
 
         .feature-icon {
-            font-size: 3rem;
+            font-size: 2.5rem;
             margin-bottom: 1rem;
+            color: #0ea5e9;
         }
 
         .feature-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: #333;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
         }
 
         .feature-card p {
             color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* Pricing Section */
+        .pricing {
+            background: white;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .pricing-card {
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 2rem;
+            position: relative;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .pricing-card.featured {
+            border-color: #0ea5e9;
+            border-width: 3px;
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: -15px;
+            right: 20px;
+            background: #f97316;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .pricing-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .price {
+            font-size: 2.5rem;
+            color: #0ea5e9;
+            font-weight: bold;
+        }
+
+        .price-period {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        .pricing-description {
+            color: #666;
+            margin: 1rem 0 2rem;
+            min-height: 50px;
+        }
+
+        .appliance-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .appliance-icon {
+            width: 80px;
+            height: 80px;
+            border: 2px solid #0ea5e9;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+
+        .icon-label {
+            text-align: center;
+            font-size: 0.85rem;
+            color: #666;
+            margin-top: 0.5rem;
+        }
+
+        .features-list {
+            list-style: none;
+            margin: 2rem 0;
+            text-align: left;
+        }
+
+        .features-list li {
+            padding: 0.5rem 0;
+            color: #666;
+        }
+
+        .features-list li:before {
+            content: "✓";
+            color: #0ea5e9;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        .select-button {
+            width: 100%;
+            padding: 1rem;
+            background: #0ea5e9;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .select-button:hover {
+            background: #0284c7;
+        }
+
+        .featured .select-button {
+            background: #f97316;
+        }
+
+        .featured .select-button:hover {
+            background: #ea580c;
+        }
+
+        /* How It Works Section */
+        .how-it-works {
+            background: #f8fafc;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .step {
+            text-align: center;
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: #bfdbfe;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: bold;
+            color: #0ea5e9;
+            margin: 0 auto 1.5rem;
+        }
+
+        .step h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .step p {
+            color: #666;
+        }
+
+        .step-button {
+            margin-top: 1rem;
+            display: inline-block;
+            background: #f97316;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* Requirements Section */
+        .requirements {
+            background: white;
+        }
+
+        .requirements-box {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #f8fafc;
+            border-radius: 10px;
+            padding: 2rem;
+            border-left: 4px solid #0ea5e9;
+        }
+
+        .requirements-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .requirements-header h3 {
+            font-size: 1.5rem;
+        }
+
+        .req-icon {
+            font-size: 2rem;
+            color: #0ea5e9;
+        }
+
+        .requirements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .requirement-item {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .requirement-item h4 {
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .requirement-item p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background: linear-gradient(to bottom, #f8fafc, #e0f2fe);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .stars {
+            color: #f97316;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .testimonial-text {
+            color: #666;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            background: #0ea5e9;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .author-info h4 {
+            font-size: 1rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .author-info p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* FAQ Section */
+        .faq {
+            background: #f0fdf4;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: white;
+            margin-bottom: 1rem;
+            border-radius: 5px;
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .faq-question:hover {
+            background: #f8fafc;
+        }
+
+        .faq-toggle {
+            color: #0ea5e9;
+            font-size: 1.5rem;
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem 1.5rem;
+            color: #666;
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+
+        /* Contact Form Section */
+        .contact-form-section {
+            background: #f8fafc;
+        }
+
+        .contact-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .contact-image {
+            width: 100%;
+            height: 500px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 10px;
+        }
+
+        .form-container {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .submit-button {
+            width: 100%;
+            padding: 1rem;
+            background: #0ea5e9;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .submit-button:hover {
+            background: #0284c7;
+        }
+
+        .privacy-note {
+            text-align: center;
+            font-size: 0.85rem;
+            color: #666;
+            margin-top: 1rem;
         }
 
         /* Footer */
         footer {
-            background: #333;
+            background: #1e293b;
             color: white;
             text-align: center;
             padding: 2rem 5%;
@@ -198,13 +633,17 @@
             .hero h1 {
                 font-size: 2rem;
             }
-
             .nav-links {
                 display: none;
             }
-
-            .button-group {
-                flex-direction: column;
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            .contact-image {
+                display: none;
+            }
+            .form-row {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -212,7 +651,7 @@
 <body>
     <!-- Navigation -->
     <nav>
-        <div class="logo">Your Business</div>
+        <div class="logo">Utah Appliance Rental</div>
         <ul class="nav-links">
             <li><a href="#pricing">Pricing</a></li>
             <li><a href="#how-it-works">How It Works</a></li>
@@ -242,33 +681,387 @@
         <div class="features-grid">
             <div class="feature-card">
                 <div class="feature-icon">🚚</div>
-                <h3>Free Delivery</h3>
-                <p>We deliver and install your appliances at no extra cost to you.</p>
+                <h3>Free Delivery & Installation</h3>
+                <p>We deliver and professionally install your appliances at no extra cost.</p>
             </div>
             
             <div class="feature-card">
                 <div class="feature-icon">🔧</div>
-                <h3>Free Maintenance</h3>
-                <p>All repairs and maintenance included in your monthly rental.</p>
+                <h3>Complimentary Repairs</h3>
+                <p>If something goes wrong, we will fix it for free. No surprise costs ever.</p>
             </div>
             
             <div class="feature-card">
-                <div class="feature-icon">⚡</div>
-                <h3>Quick Setup</h3>
-                <p>Get your appliances installed and running within 24-48 hours.</p>
+                <div class="feature-icon">📅</div>
+                <h3>No Long-Term Commitment</h3>
+                <p>Rent month-to-month after your initial term with no penalties for returning.</p>
             </div>
             
             <div class="feature-card">
-                <div class="feature-icon">💰</div>
-                <h3>Affordable Rates</h3>
-                <p>Starting at just $60/month with flexible rental terms.</p>
+                <div class="feature-icon">⭐</div>
+                <h3>Quality Appliances</h3>
+                <p>Modern, energy-efficient washers and dryers from trusted brands.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <h2 class="section-title">Pricing & Packages</h2>
+        <p class="section-subtitle">Choose the rental option that works best for you</p>
+        
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <h3>Washer Only</h3>
+                <div class="price">$35<span class="price-period">/month</span></div>
+                <p class="pricing-description">Perfect if you only need a washing machine</p>
+                
+                <div class="appliance-icons">
+                    <div>
+                        <div class="appliance-icon">🌀</div>
+                        <div class="icon-label">Washer only</div>
+                    </div>
+                </div>
+                
+                <ul class="features-list">
+                    <li>Top-loading washer</li>
+                    <li>Standard washing capacity</li>
+                    <li>Free delivery & installation</li>
+                    <li>Maintenance included</li>
+                    <li>Energy efficient</li>
+                </ul>
+                
+                <button class="select-button">Select Package</button>
+            </div>
+            
+            <div class="pricing-card featured">
+                <span class="popular-badge">MOST POPULAR</span>
+                <h3>Washer & Dryer Set</h3>
+                <div class="price">$60<span class="price-period">/month</span></div>
+                <p class="pricing-description">Most popular option for complete laundry solution</p>
+                
+                <div class="appliance-icons">
+                    <div>
+                        <div class="appliance-icon">🌀</div>
+                        <div class="icon-label">Washer</div>
+                    </div>
+                    <div>
+                        <div class="appliance-icon">♨️</div>
+                        <div class="icon-label">Dryer</div>
+                    </div>
+                </div>
+                
+                <ul class="features-list">
+                    <li>Top-loading washer</li>
+                    <li>Standard capacity dryer</li>
+                    <li>Free delivery & installation</li>
+                    <li>Maintenance included</li>
+                </ul>
+                
+                <button class="select-button">Select Package</button>
+            </div>
+            
+            <div class="pricing-card">
+                <h3>Dryer Only</h3>
+                <div class="price">$35<span class="price-period">/month</span></div>
+                <p class="pricing-description">Perfect if you only need a dryer</p>
+                
+                <div class="appliance-icons">
+                    <div>
+                        <div class="appliance-icon">♨️</div>
+                        <div class="icon-label">Dryer only</div>
+                    </div>
+                </div>
+                
+                <ul class="features-list">
+                    <li>Electric dryer</li>
+                    <li>Standard drying capacity</li>
+                    <li>Free delivery & installation</li>
+                    <li>Maintenance included</li>
+                    <li>Energy efficient</li>
+                    <li>Quick drying cycles</li>
+                </ul>
+                
+                <button class="select-button">Select Package</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="how-it-works">
+        <h2 class="section-title">How It Works</h2>
+        <p class="section-subtitle">Renting a washer and dryer has never been easier</p>
+        
+        <div class="steps-grid">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>Fill Out Form</h3>
+                <p>Complete our simple rental form to get started.</p>
+                <a href="#contact" class="step-button">Go to Form</a>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>We Will Contact You</h3>
+                <p>Our team will reach out to confirm your order and schedule delivery.</p>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>Free Installation</h3>
+                <p>We will deliver and professionally install your appliances at no cost.</p>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">4</div>
+                <h3>Enjoy Worry-Free Use</h3>
+                <p>Use your appliances with peace of mind knowing maintenance is included.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Requirements Section -->
+    <section id="requirements" class="requirements">
+        <h2 class="section-title">Rental Requirements</h2>
+        <p class="section-subtitle">What you need to know before renting</p>
+        
+        <div class="requirements-box">
+            <div class="requirements-header">
+                <span class="req-icon">ℹ️</span>
+                <div>
+                    <h3>Important Rental Requirements</h3>
+                    <p>Please review the following requirements before submitting your rental application.</p>
+                </div>
+            </div>
+            
+            <div class="requirements-grid">
+                <div class="requirement-item">
+                    <span style="font-size: 2rem;">📅</span>
+                    <div>
+                        <h4>6 Month Minimum Term</h4>
+                        <p>All rental agreements require a minimum commitment of 6 months. After the initial 6 months, your agreement will convert to a month-to-month arrangement.</p>
+                    </div>
+                </div>
+                
+                <div class="requirement-item">
+                    <span style="font-size: 2rem;">💳</span>
+                    <div>
+                        <h4>Payment Method</h4>
+                        <p>All payments must be made via debit or credit card. We accept all major cards including Visa, Mastercard, American Express, and Discover.</p>
+                    </div>
+                </div>
+                
+                <div class="requirement-item">
+                    <span style="font-size: 2rem;">💰</span>
+                    <div>
+                        <h4>First Payment</h4>
+                        <p>Your first payment is due on the day of installation. Our technician will confirm successful installation before processing your initial payment.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <p style="margin-top: 2rem; color: #666; font-size: 0.9rem;">By submitting a rental application, you agree to these requirements and the terms of our rental agreement. Please contact us if you have any questions about our requirements or policies.</p>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <h2 class="section-title">What Our Customers Say</h2>
+        <p class="section-subtitle">Join hundreds of satisfied customers across Utah</p>
+        
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">I've been using Utah Appliance Rental for over a year now and couldn't be happier. When my dryer had an issue, they sent someone out the next day. Great service!</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">JS</div>
+                    <div class="author-info">
+                        <h4>Jennifer S.</h4>
+                        <p>Salt Lake City</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">As a college student, I couldn't afford to buy new appliances. The rental option has been perfect for me. Affordable monthly payments and no worries about maintenance.</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">MT</div>
+                    <div class="author-info">
+                        <h4>Michael T.</h4>
+                        <p>Provo</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="stars">★★★★½</div>
+                <p class="testimonial-text">The delivery and installation were quick and professional. I appreciate not having to maintain these appliances myself. It's been a great experience overall.</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">LC</div>
+                    <div class="author-info">
+                        <h4>Lisa C.</h4>
+                        <p>Ogden</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-subtitle">Find answers to common questions about our rental service</p>
+        
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    What areas of Utah do you service?
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    We currently service Salt Lake County, Utah County, Davis County, and Weber County. If you're outside these areas, please contact us to see if we can accommodate your location.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    What's included in the maintenance coverage?
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Our maintenance coverage includes all repairs and parts replacement at no additional cost. If your appliance stops working properly, we'll send a technician to fix or replace it free of charge.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    How long are the rental agreements?
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    All rentals require a 6-month minimum commitment. After the initial term, you can continue renting month-to-month with no long-term contract required.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    Can I upgrade my appliances during my rental period?
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Yes! You can upgrade to a different model or add additional appliances at any time during your rental period. Contact us to discuss upgrade options.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    What payment methods do you accept?
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    We accept all major credit and debit cards including Visa, Mastercard, American Express, and Discover. Payments are processed securely on the day of installation and monthly thereafter.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact" class="contact-form-section">
+        <h2 class="section-title">Contact/Rental Form</h2>
+        <p class="section-subtitle">Fill out the form below and we will get back to you within 24 hours</p>
+        
+        <div class="contact-container">
+            <div class="contact-image"></div>
+            
+            <div class="form-container">
+                <form id="rentalForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>First Name</label>
+                            <input type="text" placeholder="John" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Last Name</label>
+                            <input type="text" placeholder="Doe" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" placeholder="john.doe@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Phone</label>
+                            <input type="tel" placeholder="(801) 555-1234" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Service Address</label>
+                        <input type="text" placeholder="123 Main St, Salt Lake City, UT 84101" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Package Interest</label>
+                        <select required>
+                            <option value="">Select a package</option>
+                            <option value="washer">Washer Only - $35/month</option>
+                            <option value="combo">Washer & Dryer Set - $60/month</option>
+                            <option value="dryer">Dryer Only - $35/month</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Message (Optional)</label>
+                        <textarea placeholder="Tell us about your needs or ask any questions"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-button">Submit Request</button>
+                    
+                    <p class="privacy-note">We'll never share your information with third parties</p>
+                </form>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Your Business Name. All rights reserved.</p>
+        <p>&copy; 2025 Utah Appliance Rental. All rights reserved.</p>
     </footer>
+
+    <script>
+        function toggleFaq(element) {
+            const faqItem = element.parentElement;
+            const allItems = document.querySelectorAll('.faq-item');
+            
+            allItems.forEach(item => {
+                if (item !== faqItem) {
+                    item.classList.remove('active');
+                }
+            });
+            
+            faqItem.classList.toggle('active');
+        }
+
+        document.getElementById('rentalForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your interest! We will contact you within 24 hours.');
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
